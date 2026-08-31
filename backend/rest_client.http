@@ -1,0 +1,615 @@
+### ==========================================================
+### DIYBELLO - TESTES DE INTEGRAÇÃO DA API
+### E-commerce de kits e caixas para hobbies criativos
+###
+### Como usar: instale a extensão "REST Client" no VS Code
+### e clique em "Send Request" acima de cada requisição.
+### ==========================================================
+
+@url = http://localhost:3000
+# @url = https://diybello-backend.up.railway.app
+
+### Token do ADMIN (preencha depois de rodar o login do admin)
+@tokenAdmin = COLE_AQUI_O_TOKEN_DO_ADMIN
+
+### Token do CLIENTE (preencha depois de rodar o login do cliente)
+@tokenCliente = COLE_AQUI_O_TOKEN_DO_CLIENTE
+
+
+### ==========================================================
+### 0. STATUS DA API (pública)
+### ==========================================================
+
+### 0.1 - Verifica se a API está no ar
+GET {{url}}/
+
+
+### ==========================================================
+### 1. AUTENTICAÇÃO (pública)
+### ==========================================================
+
+### 1.1 - Login do administrador -> copie o token para @tokenAdmin
+POST {{url}}/login
+Content-Type: application/json
+
+{
+    "email": "admin@diybello.com",
+    "senha": "admin123456"
+}
+
+### 1.2 - Login do cliente -> copie o token para @tokenCliente
+POST {{url}}/login
+Content-Type: application/json
+
+{
+    "email": "cliente@diybello.com",
+    "senha": "cliente123"
+}
+
+### 1.3 - Login com senha errada (deve retornar 401)
+POST {{url}}/login
+Content-Type: application/json
+
+{
+    "email": "cliente@diybello.com",
+    "senha": "senhaerrada"
+}
+
+
+### ==========================================================
+### 2. USUARIO
+### ==========================================================
+
+### 2.1 - POST /usuarios - cadastro de cliente (público)
+POST {{url}}/usuarios
+Content-Type: application/json
+
+{
+    "nome": "Maria Artesã",
+    "email": "maria@diybello.com",
+    "senha": "maria123456",
+    "cpf": "39053344705",
+    "telefone": "11955554444",
+    "cep": "01310100",
+    "rua": "Avenida Paulista",
+    "numero": "900",
+    "complemento": "Bloco B",
+    "bairro": "Bela Vista",
+    "cidade": "São Paulo",
+    "uf": "SP"
+}
+
+### 2.2 - POST /usuarios com CPF matematicamente inválido (deve dar 400)
+POST {{url}}/usuarios
+Content-Type: application/json
+
+{
+    "nome": "CPF Invalido",
+    "email": "cpfinvalido@diybello.com",
+    "senha": "12345678",
+    "cpf": "11111111111",
+    "cep": "01310100",
+    "rua": "Avenida Paulista",
+    "numero": "900",
+    "bairro": "Bela Vista",
+    "cidade": "São Paulo",
+    "uf": "SP"
+}
+
+### 2.3 - POST /usuarios com e-mail já existente (deve dar 400)
+POST {{url}}/usuarios
+Content-Type: application/json
+
+{
+    "nome": "Cliente Repetido",
+    "email": "cliente@diybello.com",
+    "senha": "12345678",
+    "cpf": "39053344705",
+    "cep": "01310100",
+    "rua": "Avenida Paulista",
+    "numero": "900",
+    "bairro": "Bela Vista",
+    "cidade": "São Paulo",
+    "uf": "SP"
+}
+
+### 2.4 - GET /usuarios/perfil - dados da conta logada (privado)
+GET {{url}}/usuarios/perfil
+Authorization: Bearer {{tokenCliente}}
+
+### 2.5 - GET /usuarios/perfil SEM token (deve retornar 401)
+GET {{url}}/usuarios/perfil
+
+### 2.6 - GET /usuarios - listagem geral (somente ADMIN)
+GET {{url}}/usuarios
+Authorization: Bearer {{tokenAdmin}}
+
+### 2.7 - GET /usuarios - cliente tentando listar (deve retornar 403)
+GET {{url}}/usuarios
+Authorization: Bearer {{tokenCliente}}
+
+### 2.8 - GET /usuarios/buscar?s=termo - consulta por nome/e-mail/CPF (ADMIN)
+GET {{url}}/usuarios/buscar?s=Cliente
+Authorization: Bearer {{tokenAdmin}}
+
+### 2.9 - GET /usuarios/:id - consulta por código (ADMIN)
+GET {{url}}/usuarios/2
+Authorization: Bearer {{tokenAdmin}}
+
+### 2.10 - PUT /usuarios/:id - atualização COMPLETA do cadastro
+PUT {{url}}/usuarios/2
+Content-Type: application/json
+Authorization: Bearer {{tokenCliente}}
+
+{
+    "nome": "Cliente Teste Atualizado",
+    "email": "cliente@diybello.com",
+    "cpf": "52998224725",
+    "telefone": "11966665555",
+    "cep": "01310200",
+    "rua": "Avenida Paulista",
+    "numero": "2000",
+    "complemento": "Apto 101",
+    "bairro": "Bela Vista",
+    "cidade": "São Paulo",
+    "uf": "SP"
+}
+
+### 2.11 - PATCH /usuarios/:id - atualização PARCIAL (só o telefone)
+PATCH {{url}}/usuarios/2
+Content-Type: application/json
+Authorization: Bearer {{tokenCliente}}
+
+{
+    "telefone": "11944443333"
+}
+
+### 2.12 - DELETE /usuarios/:id - apaga a conta
+DELETE {{url}}/usuarios/3
+Authorization: Bearer {{tokenAdmin}}
+
+
+### ==========================================================
+### 3. CATEGORIA
+### ==========================================================
+
+### 3.1 - GET /categorias - listagem pública
+GET {{url}}/categorias
+
+### 3.2 - GET /categorias/buscar?s=termo - consulta por nome (pública)
+GET {{url}}/categorias/buscar?s=Velas
+
+### 3.3 - GET /categorias/:id - consulta por código (pública)
+GET {{url}}/categorias/1
+
+### 3.4 - POST /categorias - cadastro (somente ADMIN)
+POST {{url}}/categorias
+Content-Type: application/json
+Authorization: Bearer {{tokenAdmin}}
+
+{
+    "nome": "Bordado & Tecelagem",
+    "descricao": "Kits de bordado livre, bastidores, linhas e agulhas.",
+    "imagem_url": "/img/placeholder.svg"
+}
+
+### 3.5 - POST /categorias sem token (deve retornar 401)
+POST {{url}}/categorias
+Content-Type: application/json
+
+{
+    "nome": "Categoria Sem Token"
+}
+
+### 3.6 - PUT /categorias/:id - atualização completa (ADMIN)
+PUT {{url}}/categorias/6
+Content-Type: application/json
+Authorization: Bearer {{tokenAdmin}}
+
+{
+    "nome": "Bordado & Tecelagem",
+    "descricao": "Kits completos de bordado livre e ponto cruz.",
+    "imagem_url": "/img/placeholder.svg",
+    "status": true
+}
+
+### 3.7 - PATCH /categorias/:id - atualização parcial (ADMIN)
+PATCH {{url}}/categorias/6
+Content-Type: application/json
+Authorization: Bearer {{tokenAdmin}}
+
+{
+    "status": false
+}
+
+### 3.8 - DELETE /categorias/:id (ADMIN)
+DELETE {{url}}/categorias/6
+Authorization: Bearer {{tokenAdmin}}
+
+
+### ==========================================================
+### 4. PRODUTO
+### ==========================================================
+
+### 4.1 - GET /produtos - vitrine pública
+GET {{url}}/produtos
+
+### 4.2 - GET /produtos com filtro por categoria
+GET {{url}}/produtos?categoria_id=1
+
+### 4.3 - GET /produtos com filtro por nível e tempo
+GET {{url}}/produtos?nivel=INICIANTE&tempo=rapido
+
+### 4.4 - GET /produtos com filtro por tipo (CAIXA, COMBO ou AVULSO)
+GET {{url}}/produtos?tipo=COMBO
+
+### 4.5 - GET /produtos/buscar?s=termo - consulta por código ou nome
+GET {{url}}/produtos/buscar?s=Aura
+
+### 4.6 - GET /produtos/:id - consulta de um produto
+GET {{url}}/produtos/1
+
+### 4.7 - GET /produtos/:id inexistente (deve retornar 404)
+GET {{url}}/produtos/9999
+
+### 4.8 - GET /produtos/admin - catálogo completo (somente ADMIN)
+GET {{url}}/produtos/admin
+Authorization: Bearer {{tokenAdmin}}
+
+### 4.9 - POST /produtos - cadastro de nova caixa (ADMIN)
+POST {{url}}/produtos
+Content-Type: application/json
+Authorization: Bearer {{tokenAdmin}}
+
+{
+    "nome": "Box Origami - Kit Dobraduras Japonesas",
+    "descricao": "Kit com 200 papéis coloridos, guia ilustrado de 12 dobraduras e suporte para expor as peças.",
+    "preco": 129.90,
+    "tipo": "CAIXA",
+    "nivel": "INICIANTE",
+    "tempo_minutos": 40,
+    "estoque_atual": 12,
+    "imagem_url": "/img/placeholder.svg",
+    "categoria_id": 3
+}
+
+### 4.10 - POST /produtos com categoria inexistente (deve dar 400)
+POST {{url}}/produtos
+Content-Type: application/json
+Authorization: Bearer {{tokenAdmin}}
+
+{
+    "nome": "Produto Sem Categoria",
+    "preco": 50,
+    "imagem_url": "/img/placeholder.svg",
+    "categoria_id": 999
+}
+
+### 4.11 - POST /produtos com cliente comum (deve retornar 403)
+POST {{url}}/produtos
+Content-Type: application/json
+Authorization: Bearer {{tokenCliente}}
+
+{
+    "nome": "Produto do Cliente",
+    "preco": 50,
+    "imagem_url": "/img/placeholder.svg",
+    "categoria_id": 1
+}
+
+### 4.12 - PUT /produtos/:id - atualização COMPLETA (ADMIN)
+PUT {{url}}/produtos/19
+Content-Type: application/json
+Authorization: Bearer {{tokenAdmin}}
+
+{
+    "nome": "Box Origami - Kit Dobraduras Japonesas",
+    "descricao": "Kit com 250 papéis coloridos, guia ilustrado de 15 dobraduras e suporte de madeira.",
+    "preco": 139.90,
+    "tipo": "CAIXA",
+    "nivel": "INICIANTE",
+    "tempo_minutos": 45,
+    "imagem_url": "/img/placeholder.svg",
+    "categoria_id": 3,
+    "status": true
+}
+
+### 4.13 - PATCH /produtos/:id - atualização PARCIAL (só o preço)
+PATCH {{url}}/produtos/1
+Content-Type: application/json
+Authorization: Bearer {{tokenAdmin}}
+
+{
+    "preco": 179.90
+}
+
+### 4.14 - DELETE /produtos/:id (ADMIN)
+DELETE {{url}}/produtos/19
+Authorization: Bearer {{tokenAdmin}}
+
+
+### ==========================================================
+### 5. ESTOQUE (todas privadas - somente ADMIN)
+### ==========================================================
+
+### 5.1 - GET /estoque - histórico de movimentações
+GET {{url}}/estoque
+Authorization: Bearer {{tokenAdmin}}
+
+### 5.2 - GET /estoque?produto_id=1 - movimentações de um produto
+GET {{url}}/estoque?produto_id=1
+Authorization: Bearer {{tokenAdmin}}
+
+### 5.3 - GET /estoque/buscar?s=termo - consulta por nome do produto
+GET {{url}}/estoque/buscar?s=Aura
+Authorization: Bearer {{tokenAdmin}}
+
+### 5.4 - GET /estoque/:id - consulta de uma movimentação
+GET {{url}}/estoque/1
+Authorization: Bearer {{tokenAdmin}}
+
+### 5.5 - POST /estoque - ENTRADA de mercadoria
+POST {{url}}/estoque
+Content-Type: application/json
+Authorization: Bearer {{tokenAdmin}}
+
+{
+    "produto_id": 1,
+    "tipo": "ENTRADA",
+    "quantidade": 30,
+    "motivo": "Compra do fornecedor de cera vegetal"
+}
+
+### 5.6 - POST /estoque - SAIDA por perda/avaria
+POST {{url}}/estoque
+Content-Type: application/json
+Authorization: Bearer {{tokenAdmin}}
+
+{
+    "produto_id": 1,
+    "tipo": "SAIDA",
+    "quantidade": 2,
+    "motivo": "Pote de vidro quebrado no transporte"
+}
+
+### 5.7 - POST /estoque - SAIDA maior que o saldo (deve dar 400)
+POST {{url}}/estoque
+Content-Type: application/json
+Authorization: Bearer {{tokenAdmin}}
+
+{
+    "produto_id": 1,
+    "tipo": "SAIDA",
+    "quantidade": 99999,
+    "motivo": "Teste de estoque insuficiente"
+}
+
+### 5.8 - PUT /estoque/:id - corrigir a movimentação inteira
+PUT {{url}}/estoque/19
+Content-Type: application/json
+Authorization: Bearer {{tokenAdmin}}
+
+{
+    "tipo": "ENTRADA",
+    "quantidade": 25,
+    "motivo": "Correção da nota fiscal do fornecedor"
+}
+
+### 5.9 - PATCH /estoque/:id - ajustar apenas o motivo
+PATCH {{url}}/estoque/19
+Content-Type: application/json
+Authorization: Bearer {{tokenAdmin}}
+
+{
+    "motivo": "Entrada conferida pelo estoquista"
+}
+
+### 5.10 - DELETE /estoque/:id - estorna a movimentação
+DELETE {{url}}/estoque/19
+Authorization: Bearer {{tokenAdmin}}
+
+
+### ==========================================================
+### 6. PEDIDO / CHECKOUT (todas privadas)
+### ==========================================================
+
+### 6.1 - POST /pedidos - checkout do carrinho (cliente logado)
+POST {{url}}/pedidos
+Content-Type: application/json
+Authorization: Bearer {{tokenCliente}}
+
+{
+    "itens": [
+        { "produto_id": 1, "quantidade": 1 },
+        { "produto_id": 5, "quantidade": 2 }
+    ],
+    "forma_pagamento": "PIX",
+    "observacao": "Presente de aniversário, favor caprichar no laço."
+}
+
+### 6.2 - POST /pedidos usando o cupom de boas-vindas
+POST {{url}}/pedidos
+Content-Type: application/json
+Authorization: Bearer {{tokenCliente}}
+
+{
+    "itens": [
+        { "produto_id": 3, "quantidade": 1 },
+        { "produto_id": 10, "quantidade": 2 }
+    ],
+    "cupom": "BEMVINDO10",
+    "forma_pagamento": "CARTAO"
+}
+
+### 6.3 - POST /pedidos SEM token (deve retornar 401)
+POST {{url}}/pedidos
+Content-Type: application/json
+
+{
+    "itens": [
+        { "produto_id": 1, "quantidade": 1 }
+    ]
+}
+
+### 6.4 - POST /pedidos com quantidade acima do estoque (deve dar 400)
+POST {{url}}/pedidos
+Content-Type: application/json
+Authorization: Bearer {{tokenCliente}}
+
+{
+    "itens": [
+        { "produto_id": 1, "quantidade": 99999 }
+    ]
+}
+
+### 6.5 - POST /pedidos com cupom inválido (deve dar 400)
+POST {{url}}/pedidos
+Content-Type: application/json
+Authorization: Bearer {{tokenCliente}}
+
+{
+    "itens": [
+        { "produto_id": 1, "quantidade": 1 }
+    ],
+    "cupom": "CUPOMFALSO"
+}
+
+### 6.6 - GET /pedidos/meus-pedidos - histórico do cliente logado
+GET {{url}}/pedidos/meus-pedidos
+Authorization: Bearer {{tokenCliente}}
+
+### 6.7 - GET /pedidos - todos os pedidos da loja (somente ADMIN)
+GET {{url}}/pedidos
+Authorization: Bearer {{tokenAdmin}}
+
+### 6.8 - GET /pedidos/buscar?s=termo - consulta por código ou cliente (ADMIN)
+GET {{url}}/pedidos/buscar?s=Cliente
+Authorization: Bearer {{tokenAdmin}}
+
+### 6.9 - GET /pedidos/:id - detalhe do pedido
+GET {{url}}/pedidos/1
+Authorization: Bearer {{tokenCliente}}
+
+### 6.10 - PUT /pedidos/:id - atualização completa do status (ADMIN)
+PUT {{url}}/pedidos/1
+Content-Type: application/json
+Authorization: Bearer {{tokenAdmin}}
+
+{
+    "status": "PAGO",
+    "forma_pagamento": "PIX"
+}
+
+### 6.11 - PATCH /pedidos/:id - atualização parcial do status (ADMIN)
+PATCH {{url}}/pedidos/1
+Content-Type: application/json
+Authorization: Bearer {{tokenAdmin}}
+
+{
+    "status": "PAGO"
+}
+
+### 6.12 - DELETE /pedidos/:id - cancela e devolve o estoque (ADMIN)
+DELETE {{url}}/pedidos/2
+Authorization: Bearer {{tokenAdmin}}
+
+
+### ==========================================================
+### 7. ENTREGA (todas privadas)
+### ==========================================================
+
+### 7.1 - GET /entregas/minhas-entregas - rastreio do cliente logado
+GET {{url}}/entregas/minhas-entregas
+Authorization: Bearer {{tokenCliente}}
+
+### 7.2 - GET /entregas - painel de logística (ADMIN)
+GET {{url}}/entregas
+Authorization: Bearer {{tokenAdmin}}
+
+### 7.3 - GET /entregas?status=PREPARANDO - filtro por status (ADMIN)
+GET {{url}}/entregas?status=PREPARANDO
+Authorization: Bearer {{tokenAdmin}}
+
+### 7.4 - GET /entregas/buscar?s=termo - consulta por rastreio/cidade (ADMIN)
+GET {{url}}/entregas/buscar?s=DIY
+Authorization: Bearer {{tokenAdmin}}
+
+### 7.5 - GET /entregas/:id - detalhe da entrega
+GET {{url}}/entregas/1
+Authorization: Bearer {{tokenCliente}}
+
+### 7.6 - POST /entregas - registrar entrega manualmente (ADMIN)
+POST {{url}}/entregas
+Content-Type: application/json
+Authorization: Bearer {{tokenAdmin}}
+
+{
+    "pedido_id": 3,
+    "cep": "01310100",
+    "rua": "Avenida Paulista",
+    "numero": "1578",
+    "bairro": "Bela Vista",
+    "cidade": "São Paulo",
+    "uf": "SP",
+    "status": "PREPARANDO"
+}
+
+### 7.7 - PUT /entregas/:id - atualização completa (ADMIN)
+PUT {{url}}/entregas/1
+Content-Type: application/json
+Authorization: Bearer {{tokenAdmin}}
+
+{
+    "status": "EM_TRANSITO",
+    "cep": "01310100",
+    "rua": "Avenida Paulista",
+    "numero": "1578",
+    "bairro": "Bela Vista",
+    "cidade": "São Paulo",
+    "uf": "SP"
+}
+
+### 7.8 - PATCH /entregas/:id - marcar como ENTREGUE (ADMIN)
+PATCH {{url}}/entregas/1
+Content-Type: application/json
+Authorization: Bearer {{tokenAdmin}}
+
+{
+    "status": "ENTREGUE"
+}
+
+### 7.9 - DELETE /entregas/:id (ADMIN)
+DELETE {{url}}/entregas/2
+Authorization: Bearer {{tokenAdmin}}
+
+
+### ==========================================================
+### 8. RELATÓRIOS GERENCIAIS (privados - somente ADMIN)
+### ==========================================================
+
+### 8.1 - GET /relatorios/vendas - alimenta os gráficos de vendas
+GET {{url}}/relatorios/vendas
+Authorization: Bearer {{tokenAdmin}}
+
+### 8.2 - GET /relatorios/estoque - alimenta o gráfico de estoque
+GET {{url}}/relatorios/estoque
+Authorization: Bearer {{tokenAdmin}}
+
+### 8.3 - GET /relatorios/vendas com token de cliente (deve retornar 403)
+GET {{url}}/relatorios/vendas
+Authorization: Bearer {{tokenCliente}}
+
+### 8.4 - GET /relatorios/vendas sem token (deve retornar 401)
+GET {{url}}/relatorios/vendas
+
+
+### ==========================================================
+### 9. INTEGRAÇÃO EXTERNA - VIACEP
+### (consumida direto pelo frontend na tela de cadastro)
+### ==========================================================
+
+### 9.1 - Consulta de CEP no ViaCEP
+GET https://viacep.com.br/ws/01310100/json/
+
+### 9.2 - Consulta de CEP inexistente (retorna "erro": true)
+GET https://viacep.com.br/ws/00000000/json/

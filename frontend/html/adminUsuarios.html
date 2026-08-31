@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/config.js" defer></script>
+    <script src="../js/carrinho.js" defer></script>
+    <script src="../js/componentes.js" defer></script>
+    <script src="../js/adminUsuarios.js" defer></script>
+
+    <title>Clientes - DIYBELLO</title>
+</head>
+
+<body>
+    <header id="cabecalho"></header>
+
+    <main>
+        <div class="cabecalho_pagina">
+            <h1>Clientes cadastrados</h1>
+            <p>Consulta por código, nome, e-mail ou CPF. Somente administradores acessam essa listagem.</p>
+            <p><a href="./admin.html">Voltar ao painel</a></p>
+        </div>
+
+        <form class="barra_filtros" id="form_busca">
+            <div class="campo">
+                <label for="busca">Consultar por código, nome, e-mail ou CPF</label>
+                <input type="text" id="busca" placeholder="Ex: 2, Cliente, cliente@diybello.com">
+            </div>
+            <div class="campo">
+                <button type="submit">Consultar</button>
+            </div>
+            <div class="campo">
+                <button type="button" id="btn_listar" class="botao_secundario">Listar tudo</button>
+            </div>
+        </form>
+
+        <div id="resposta"></div>
+
+        <div id="lista_usuarios"></div>
+    </main>
+
+    <footer id="rodape"></footer>
+</body>
+
+</html>

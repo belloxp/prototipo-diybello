@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Combo Night Out em Casa">
+  <rect width="512" height="512" fill="#dd7454"/>
+  <g transform="translate(256 256) scale(0.78) translate(-256 -256)">
+    
+    <path d="M170 132c18 22 26 38 26 52a26 26 0 0 1-52 0c0-14 8-30 26-52z" fill="#FFFFFF"/>
+    <rect x="142" y="196" width="56" height="72" rx="12" fill="#FFFFFF"/>
+    <ellipse cx="336" cy="180" rx="72" ry="24" fill="#FFFFFF"/>
+    <path d="M268 196c-10 56 8 96 26 120 10 12 22 18 42 18s32-6 42-18c18-24 36-64 26-120-14 16-40 24-68 24s-54-8-68-24z" fill="#FFFFFF"/>
+    <path d="M96 288l160 44 160-44 44 56-204 58-204-58z" fill="#FFFFFF"/>
+    <path d="M112 360l144 40v98L112 458z" fill="#FFFFFF"/>
+    <path d="M400 360L256 400v98l144-40z" fill="#FFFFFF"/>
+  </g>
+</svg>

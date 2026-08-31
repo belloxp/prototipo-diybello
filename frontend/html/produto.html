@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/config.js" defer></script>
+    <script src="../js/carrinho.js" defer></script>
+    <script src="../js/componentes.js" defer></script>
+    <script src="../js/produto.js" defer></script>
+
+    <title>Produto - DIYBELLO</title>
+</head>
+
+<body>
+    <header id="cabecalho"></header>
+
+    <main>
+        <div id="resposta"></div>
+
+        <!-- Consulta do produto por CÓDIGO (GET /produtos/:id) -->
+        <section class="detalhe_produto" id="detalhe_produto"></section>
+
+        <section style="margin-top: 40px;">
+            <div class="cabecalho_pagina">
+                <h2>Você também vai gostar</h2>
+                <p>Outros kits da mesma categoria.</p>
+            </div>
+            <div class="grade_cards" id="lista_relacionados"></div>
+        </section>
+    </main>
+
+    <footer id="rodape"></footer>
+</body>
+
+</html>

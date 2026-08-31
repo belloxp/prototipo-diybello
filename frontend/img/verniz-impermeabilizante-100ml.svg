@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Verniz Impermeabilizante 100ml">
+  <rect width="512" height="512" fill="#a5613c"/>
+  <g transform="translate(256 256) scale(0.78) translate(-256 -256)">
+    
+    <path d="M158 174h196c20 0 36 16 36 36v182c0 28-22 50-50 50H172c-28 0-50-22-50-50V210c0-20 16-36 36-36z" fill="#FFFFFF"/>
+    <path d="M158 174c0-44 44-78 98-78s98 34 98 78z" fill="#FFFFFF" opacity=".85"/>
+    <rect x="230" y="60" width="52" height="52" rx="16" fill="#FFFFFF"/>
+  </g>
+</svg>

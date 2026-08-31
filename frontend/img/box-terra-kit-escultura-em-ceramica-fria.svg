@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Box Terra - Kit Escultura em Cerâmica Fria">
+  <rect width="512" height="512" fill="#a5613c"/>
+  <g transform="translate(256 256) scale(0.78) translate(-256 -256)">
+    
+    <ellipse cx="256" cy="176" rx="120" ry="40" fill="#FFFFFF"/>
+    <path d="M142 200c-16 92 12 156 44 196 16 20 36 30 70 30s54-10 70-30c32-40 60-104 44-196-24 26-66 40-114 40s-90-14-114-40z" fill="#FFFFFF"/>
+  </g>
+</svg>

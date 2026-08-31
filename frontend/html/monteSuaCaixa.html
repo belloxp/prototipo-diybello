@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/config.js" defer></script>
+    <script src="../js/carrinho.js" defer></script>
+    <script src="../js/componentes.js" defer></script>
+    <script src="../js/monteSuaCaixa.js" defer></script>
+
+    <title>Monte sua Caixa - DIYBELLO</title>
+</head>
+
+<body>
+    <header id="cabecalho"></header>
+
+    <main class="wizard">
+
+        <!-- ---------------- BARRA DE PROGRESSO ---------------- -->
+        <div class="wizard_topo">
+            <div class="wizard_titulo">
+                <span class="hero_tag">Exclusivo DIYBELLO</span>
+                <h1>Monte sua Caixa</h1>
+            </div>
+
+            <div class="trilha" id="trilha">
+                <div class="trilha_linha"><span id="trilha_progresso"></span></div>
+
+                <div class="trilha_passos">
+                    <div class="trilha_passo ativo" data-passo="1">
+                        <span class="trilha_bolinha">1</span>
+                        <span class="trilha_rotulo">Tema</span>
+                    </div>
+                    <div class="trilha_passo" data-passo="2">
+                        <span class="trilha_bolinha">2</span>
+                        <span class="trilha_rotulo">Itens básicos</span>
+                    </div>
+                    <div class="trilha_passo" data-passo="3">
+                        <span class="trilha_bolinha">3</span>
+                        <span class="trilha_rotulo">Extras</span>
+                    </div>
+                    <div class="trilha_passo" data-passo="4">
+                        <span class="trilha_bolinha">4</span>
+                        <span class="trilha_rotulo">Presente</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="resposta"></div>
+
+        <div class="wizard_corpo">
+
+            <!-- ---------------- CONTEÚDO DO PASSO ---------------- -->
+            <section class="wizard_palco">
+                <div id="conteudo_passo"></div>
+
+                <div class="wizard_acoes">
+                    <button type="button" id="btn_voltar" class="botao_secundario">Voltar</button>
+                    <button type="button" id="btn_avancar">Avançar</button>
+                </div>
+            </section>
+
+            <!-- ---------------- RESUMO COM PREÇO DINÂMICO ---------------- -->
+            <aside class="wizard_resumo">
+                <div class="resumo_caixa_topo">
+                    <h2>Sua caixa</h2>
+                    <span id="resumo_contagem" class="resumo_contagem">0 itens</span>
+                </div>
+
+                <div id="resumo_caixa"></div>
+            </aside>
+        </div>
+    </main>
+
+    <footer id="rodape"></footer>
+</body>
+
+</html>

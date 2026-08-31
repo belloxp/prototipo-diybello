@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/config.js" defer></script>
+    <script src="../js/carrinho.js" defer></script>
+    <script src="../js/componentes.js" defer></script>
+    <script src="../js/admin.js" defer></script>
+
+    <title>Painel Administrativo - DIYBELLO</title>
+</head>
+
+<body>
+    <header id="cabecalho"></header>
+
+    <main>
+        <div class="cabecalho_pagina">
+            <h1>Painel administrativo</h1>
+            <p id="boas_vindas">Área restrita aos administradores da loja DIYBELLO.</p>
+        </div>
+
+        <div id="resposta"></div>
+
+        <!-- ---------------- INDICADORES ---------------- -->
+        <div class="indicadores" id="indicadores"></div>
+
+        <!-- ---------------- ATALHOS ---------------- -->
+        <section class="painel">
+            <h2>Gestão da loja</h2>
+            <div class="opcoes_wizard" style="margin-top: 14px;">
+                <a href="./adminProdutos.html" class="opcao" style="text-decoration: none;">
+                    <span class="opcao_texto">
+                        <strong>Cadastro de Produtos</strong>
+                        <span>Cadastrar caixas, combos e insumos, atualizar preços e apagar itens do catálogo.</span>
+                    </span>
+                </a>
+
+                <a href="./adminEstoque.html" class="opcao" style="text-decoration: none;">
+                    <span class="opcao_texto">
+                        <strong>Movimentação de Estoque</strong>
+                        <span>Dar entrada e saída de mercadoria e conferir o histórico de movimentações.</span>
+                    </span>
+                </a>
+
+                <a href="./adminPedidos.html" class="opcao" style="text-decoration: none;">
+                    <span class="opcao_texto">
+                        <strong>Movimentação de Vendas</strong>
+                        <span>Acompanhar os pedidos, mudar o status do pagamento e o status das entregas.</span>
+                    </span>
+                </a>
+
+                <a href="./adminCategorias.html" class="opcao" style="text-decoration: none;">
+                    <span class="opcao_texto">
+                        <strong>Categorias de Hobby</strong>
+                        <span>Manter as modalidades atendidas pela loja.</span>
+                    </span>
+                </a>
+
+                <a href="./adminUsuarios.html" class="opcao" style="text-decoration: none;">
+                    <span class="opcao_texto">
+                        <strong>Clientes cadastrados</strong>
+                        <span>Consultar clientes por código, nome, e-mail ou CPF.</span>
+                    </span>
+                </a>
+
+                <a href="./relatorios.html" class="opcao" style="text-decoration: none;">
+                    <span class="opcao_texto">
+                        <strong>Relatórios Gerenciais</strong>
+                        <span>Gráficos de vendas por categoria, faturamento mensal e saldo de estoque.</span>
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <!-- ---------------- ALERTA DE ESTOQUE ---------------- -->
+        <section class="painel">
+            <h2>Alerta de reposição</h2>
+            <p class="ajuda" style="margin-bottom: 12px;">Produtos com 5 unidades ou menos em estoque.</p>
+            <div id="estoque_baixo"></div>
+        </section>
+    </main>
+
+    <footer id="rodape"></footer>
+</body>
+
+</html>

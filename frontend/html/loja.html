@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/config.js" defer></script>
+    <script src="../js/carrinho.js" defer></script>
+    <script src="../js/componentes.js" defer></script>
+    <script src="../js/loja.js" defer></script>
+
+    <title>Loja - DIYBELLO</title>
+</head>
+
+<body>
+    <header id="cabecalho"></header>
+
+    <main>
+        <!-- ---------------- BANNER PROMOCIONAL ---------------- -->
+        <section class="hero">
+            <div class="hero_texto">
+                <span class="hero_tag">Kits de experiência</span>
+                <h1>Descubra um hobby<br>dentro de uma caixa</h1>
+                <p>
+                    Velas aromáticas, cerâmica fria, aquarela, macramê e terrários.
+                    Tudo o que você precisa para criar com as próprias mãos.
+                </p>
+                <div class="hero_botoes">
+                    <a href="./catalogo.html" class="botao">Ver as caixas</a>
+                    <a href="./monteSuaCaixa.html" class="botao botao_secundario">Monte sua Caixa</a>
+                </div>
+
+                <div class="hero_selos">
+                    <div><strong>BEMVINDO10</strong><span>10% na 1ª compra</span></div>
+                    <div><strong>R$ 250</strong><span>frete grátis acima</span></div>
+                    <div><strong>Eco</strong><span>materiais sustentáveis</span></div>
+                </div>
+            </div>
+
+            <div class="hero_arte" id="hero_arte"></div>
+        </section>
+
+        <div id="resposta"></div>
+
+        <!-- ---------------- CATEGORIAS ---------------- -->
+        <section class="secao">
+            <div class="secao_topo">
+                <div>
+                    <h2>Escolha o seu hobby</h2>
+                    <p>Cinco modalidades para começar hoje mesmo.</p>
+                </div>
+                <a href="./catalogo.html" class="secao_link">Ver tudo</a>
+            </div>
+
+            <div class="trilha_categorias" id="lista_categorias"></div>
+        </section>
+
+        <!-- ---------------- CAIXAS EM DESTAQUE ---------------- -->
+        <section class="secao">
+            <div class="secao_topo">
+                <div>
+                    <h2>Caixas em destaque</h2>
+                    <p>Kits fechados com todos os materiais inclusos.</p>
+                </div>
+                <a href="./catalogo.html?tipo=CAIXA" class="secao_link">Ver todas</a>
+            </div>
+
+            <div class="grade_cards" id="lista_destaques"></div>
+        </section>
+
+        <!-- ---------------- COMBOS ---------------- -->
+        <section class="secao">
+            <div class="secao_topo">
+                <div>
+                    <h2>Combos temáticos</h2>
+                    <p>Duas ou mais caixas com apelo de experiência.</p>
+                </div>
+                <a href="./catalogo.html?tipo=COMBO" class="secao_link">Ver todos</a>
+            </div>
+
+            <div class="grade_cards" id="lista_combos"></div>
+        </section>
+
+        <!-- ---------------- CHAMADA MONTE SUA CAIXA ---------------- -->
+        <section class="chamada">
+            <div>
+                <span class="hero_tag">Exclusivo DIYBELLO</span>
+                <h2>Monte sua caixa do seu jeito</h2>
+                <p>
+                    Escolha o tema, marque só os materiais que faltam na sua casa,
+                    personalize os aromas e escreva a mensagem do cartão.
+                    O preço aparece na hora, item por item.
+                </p>
+                <a href="./monteSuaCaixa.html" class="botao">Começar a montar</a>
+            </div>
+            <div class="chamada_arte" id="chamada_arte"></div>
+        </section>
+    </main>
+
+    <footer id="rodape"></footer>
+</body>
+
+</html>

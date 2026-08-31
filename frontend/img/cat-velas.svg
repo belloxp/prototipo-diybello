@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Aroma &amp; Velas">
+  <rect width="512" height="512" fill="#C2664A"/>
+  <g transform="translate(256 236) scale(0.66) translate(-256 -256)">
+    
+    <path d="M256 84c30 36 42 60 42 82a42 42 0 0 1-84 0c0-22 12-46 42-82z" fill="#FFFFFF"/>
+    <rect x="186" y="204" width="140" height="216" rx="26" fill="#FFFFFF"/>
+    <rect x="150" y="404" width="212" height="46" rx="18" fill="#FFFFFF"/>
+  </g>
+  <text x="256" y="452" font-family="'Plus Jakarta Sans', 'Segoe UI', sans-serif" font-size="30"
+        font-weight="700" fill="#FFFFFF" text-anchor="middle">Aroma &amp; Velas</text>
+</svg>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Biblioteca de gráficos exigida no desafio -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <script src="../js/config.js" defer></script>
+    <script src="../js/carrinho.js" defer></script>
+    <script src="../js/componentes.js" defer></script>
+    <script src="../js/graficos.js" defer></script>
+    <script src="../js/relatorios.js" defer></script>
+
+    <title>Relatórios Gerenciais - DIYBELLO</title>
+</head>
+
+<body>
+    <header id="cabecalho"></header>
+
+    <main>
+        <div class="cabecalho_pagina">
+            <h1>Relatórios Gerenciais</h1>
+            <p>
+                Dados vindos de <strong>GET /relatorios/vendas</strong> e
+                <strong>GET /relatorios/estoque</strong>, renderizados no frontend com Chart.js.
+            </p>
+            <p><a href="./admin.html">Voltar ao painel</a></p>
+        </div>
+
+        <div id="resposta"></div>
+
+        <div class="indicadores" id="indicadores"></div>
+
+        <!-- ---------------- RELATÓRIO 1 - VENDAS ---------------- -->
+        <section class="grafico_caixa">
+            <h2>Relatório 1 - Vendas por Categoria de Hobby</h2>
+            <p class="ajuda">Quanto cada modalidade faturou desde a abertura da loja.</p>
+            <canvas id="grafico_categoria"></canvas>
+        </section>
+
+        <section class="grafico_caixa">
+            <h2>Faturamento Mensal</h2>
+            <p class="ajuda">Evolução do faturamento e da quantidade de pedidos por mês.</p>
+            <canvas id="grafico_mensal"></canvas>
+        </section>
+
+        <!-- ---------------- RELATÓRIO 2 - ESTOQUE ---------------- -->
+        <section class="grafico_caixa">
+            <h2>Relatório 2 - Saldo de Estoque por Produto</h2>
+            <p class="ajuda">Produtos ordenados do menor para o maior saldo, para facilitar a reposição.</p>
+            <canvas id="grafico_estoque"></canvas>
+        </section>
+
+        <!-- ---------------- TABELAS DE APOIO ---------------- -->
+        <section class="painel">
+            <h2>Produtos mais vendidos</h2>
+            <div id="tabela_mais_vendidos"></div>
+        </section>
+
+        <section class="painel">
+            <h2>Posição detalhada do estoque</h2>
+            <div id="tabela_estoque"></div>
+        </section>
+    </main>
+
+    <footer id="rodape"></footer>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Argila Sem Forno 1kg">
+  <rect width="512" height="512" fill="#8e5334"/>
+  <g transform="translate(256 256) scale(0.78) translate(-256 -256)">
+    
+    <path d="M128 176h256c26 0 46 20 46 46v150c0 30-24 54-54 54H136c-30 0-54-24-54-54V222c0-26 20-46 46-46z" fill="#FFFFFF"/>
+    <path d="M180 96l30 80h-92z" fill="#FFFFFF"/>
+    <path d="M332 96l62 80h-92z" fill="#FFFFFF"/>
+  </g>
+</svg>

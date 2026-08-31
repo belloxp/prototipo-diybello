@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/config.js" defer></script>
+    <script src="../js/carrinho.js" defer></script>
+    <script src="../js/componentes.js" defer></script>
+    <script src="../js/carrinhoPagina.js" defer></script>
+
+    <title>Carrinho - DIYBELLO</title>
+</head>
+
+<body>
+    <header id="cabecalho"></header>
+
+    <main>
+        <div class="cabecalho_pagina">
+            <h1>Seu carrinho</h1>
+            <p>Os itens ficam salvos no LocalStorage do navegador, mesmo sem login.</p>
+        </div>
+
+        <div id="resposta"></div>
+
+        <div class="duas_colunas">
+            <!-- ---------------- ITENS ---------------- -->
+            <section class="painel">
+                <h2>Itens selecionados</h2>
+                <div id="lista_itens"></div>
+            </section>
+
+            <!-- ---------------- RESUMO E CHECKOUT ---------------- -->
+            <aside class="painel resumo_flutuante">
+                <h2>Resumo do pedido</h2>
+
+                <div class="campo">
+                    <label for="cupom">Cupom de desconto</label>
+                    <input type="text" id="cupom" placeholder="BEMVINDO10">
+                    <span class="ajuda">Cupons ativos: BEMVINDO10 (10%) e DIY15 (15%)</span>
+                </div>
+
+                <div id="resumo_valores"></div>
+
+                <div class="campo" style="margin-top: 14px;">
+                    <label for="forma_pagamento">Forma de pagamento</label>
+                    <select id="forma_pagamento">
+                        <option value="PIX">PIX</option>
+                        <option value="CARTAO">Cartão de crédito</option>
+                        <option value="BOLETO">Boleto bancário</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="observacao">Mensagem do cartão de presente</label>
+                    <textarea id="observacao" placeholder="Opcional - escreva a mensagem que vai no cartão da caixa"></textarea>
+                </div>
+
+                <button id="btn_finalizar" class="botao_bloco">Finalizar pedido</button>
+                <p class="ajuda" style="margin-top: 8px;" id="aviso_login"></p>
+
+                <button id="btn_limpar_carrinho" class="botao_secundario botao_bloco" style="margin-top: 10px;">
+                    Esvaziar carrinho
+                </button>
+            </aside>
+        </div>
+    </main>
+
+    <footer id="rodape"></footer>
+</body>
+
+</html>

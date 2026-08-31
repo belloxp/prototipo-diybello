@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/config.js" defer></script>
+    <script src="../js/carrinho.js" defer></script>
+    <script src="../js/validacao.js" defer></script>
+    <script src="../js/cadastro.js" defer></script>
+
+    <title>Criar conta - DIYBELLO</title>
+</head>
+
+<body>
+    <header id="cabecalho"></header>
+
+    <main>
+        <div class="cabecalho_pagina">
+            <h1>Criar sua conta</h1>
+            <p>
+                O CPF é validado matematicamente pela fórmula oficial e o endereço é
+                autocompletado pela API do ViaCEP.
+            </p>
+        </div>
+
+        <form class="formulario">
+            <h2>Dados pessoais</h2>
+
+            <div class="campo">
+                <label for="nome">Nome completo *</label>
+                <input type="text" id="nome" placeholder="Como está no documento" required>
+            </div>
+
+            <div class="linha_form">
+                <div class="campo">
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" placeholder="voce@email.com" required>
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha *</label>
+                    <input type="password" id="senha" placeholder="Mínimo de 8 caracteres" required>
+                    <span class="ajuda">A senha é criptografada com bcrypt no servidor.</span>
+                </div>
+            </div>
+
+            <div class="linha_form">
+                <div class="campo">
+                    <label for="cpf">CPF *</label>
+                    <input type="text" id="cpf" placeholder="000.000.000-00" maxlength="14" required>
+                    <span class="ajuda" id="aviso_cpf"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" id="telefone" placeholder="(11) 90000-0000" maxlength="15">
+                </div>
+            </div>
+
+            <h2 style="margin-top: 22px;">Endereço de entrega</h2>
+            <p class="ajuda" style="margin-bottom: 12px;">
+                Digite o CEP e saia do campo: rua, bairro e cidade são preenchidos automaticamente.
+            </p>
+
+            <div class="linha_form">
+                <div class="campo">
+                    <label for="cep">CEP *</label>
+                    <input type="text" id="cep" placeholder="00000-000" maxlength="9" required>
+                    <span class="ajuda" id="aviso_cep"></span>
+                </div>
+
+                <div class="campo">
+                    <label for="rua">Rua / Logradouro *</label>
+                    <input type="text" id="rua" placeholder="Preenchido pelo ViaCEP" required>
+                </div>
+            </div>
+
+            <div class="linha_form">
+                <div class="campo">
+                    <label for="numero">Número *</label>
+                    <input type="text" id="numero" placeholder="123" required>
+                </div>
+
+                <div class="campo">
+                    <label for="complemento">Complemento</label>
+                    <input type="text" id="complemento" placeholder="Apto, bloco, casa">
+                </div>
+            </div>
+
+            <div class="linha_form">
+                <div class="campo">
+                    <label for="bairro">Bairro *</label>
+                    <input type="text" id="bairro" placeholder="Preenchido pelo ViaCEP" required>
+                </div>
+
+                <div class="campo">
+                    <label for="cidade">Cidade *</label>
+                    <input type="text" id="cidade" placeholder="Preenchido pelo ViaCEP" required>
+                </div>
+
+                <div class="campo">
+                    <label for="uf">UF *</label>
+                    <input type="text" id="uf" placeholder="SP" maxlength="2" required>
+                </div>
+            </div>
+
+            <button type="submit" id="btn_cadastrar" class="botao_bloco" style="margin-top: 12px;">
+                Criar conta
+            </button>
+
+            <div id="resposta"></div>
+
+            <p class="ajuda" style="text-align: center; margin-top: 14px;">
+                Já tem conta? <a href="../index.html">Entrar</a>
+            </p>
+        </form>
+    </main>
+
+    <footer id="rodape"></footer>
+</body>
+
+</html>

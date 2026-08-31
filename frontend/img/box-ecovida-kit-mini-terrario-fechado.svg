@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Box EcoVida - Kit Mini Terrário Fechado">
+  <rect width="512" height="512" fill="#5f8b5a"/>
+  <g transform="translate(256 256) scale(0.78) translate(-256 -256)">
+    
+    <rect x="212" y="60" width="88" height="40" rx="16" fill="#FFFFFF"/>
+    <path d="M186 116h140c34 0 62 28 62 62v170c0 42-34 76-76 76H200c-42 0-76-34-76-76V178c0-34 28-62 62-62z" fill="#FFFFFF" opacity=".34"/>
+    <path d="M148 340h216v46c0 20-16 36-36 36H184c-20 0-36-16-36-36z" fill="#FFFFFF"/>
+    <path d="M256 340V226" stroke="#FFFFFF" stroke-width="22" stroke-linecap="round"/>
+    <path d="M256 274c-38-16-58-48-52-84 36 8 58 42 52 84z" fill="#FFFFFF"/>
+    <path d="M256 300c38-16 60-50 54-86-36 8-60 44-54 86z" fill="#FFFFFF"/>
+  </g>
+</svg>

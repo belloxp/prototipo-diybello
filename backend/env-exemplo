@@ -1,0 +1,27 @@
+# ============================================
+# |   DIYBELLO - VARIÁVEIS DE AMBIENTE       |
+# |   copie esse arquivo para .env           |
+# ============================================
+
+# CONFIGURAÇÃO DO BANCO DE DADOS (MySQL)
+DB_NAME=diybello
+DB_USER=root
+DB_PASS=senai
+DB_HOST=localhost
+DB_PORT=3306
+
+# CONFIGURAÇÃO DO SERVIDOR NODE
+PORT=3000
+HOST=localhost
+NODE_ENV=development
+
+# CONFIGURAÇÕES DE SEGURANÇA
+# Chave Secreta para Assinar o JSON Web Token (JWT)
+JWT_SECRET=diybello_chave_secreta_troque_essa_string_em_producao_2026
+# Tempo de Expiração do Token (Ex: 1d, 8h, 30m)
+JWT_EXPIRES_IN=8h
+# Número de salt rounds para o bcrypt (Geralmente 10 a 12)
+BCRYPT_SALT_ROUNDS=10
+
+# E-mail que recebe nível ADMIN automaticamente no cadastro
+ADMIN_EMAIL=admin@diybello.com

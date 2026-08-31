@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/config.js" defer></script>
+    <script src="./js/carrinho.js" defer></script>
+    <script src="./js/login.js" defer></script>
+
+    <title>DIYBELLO - Entrar no sistema</title>
+</head>
+
+<body class="tela_login">
+
+
+
+    <div class="login_split">
+
+        <aside class="login_marca">
+            <div class="login_marca_conteudo">
+                <div class="login_logo">
+                    <span class="login_logo_mark"></span>
+                    <span class="login_logo_texto">DIY<strong>BELLO</strong></span>
+                </div>
+
+                <h1>Um hobby inteiro<br>dentro de uma caixa.</h1>
+
+                <p>
+                    Velas aromáticas, cerâmica fria, aquarela, macramê e terrários.
+                    Tudo o que você precisa para criar com as próprias mãos —
+                    do primeiro material ao resultado final.
+                </p>
+
+                <ul class="login_lista">
+                    <li><span>01</span> Caixas prontas para presentear</li>
+                    <li><span>02</span> Combos temáticos para fazer a dois</li>
+                    <li><span>03</span> Monte a sua caixa item por item</li>
+                </ul>
+
+                <div class="login_rodape_marca">
+                    Sistema de e-commerce e controle de estoque · versão 1.0
+                </div>
+            </div>
+        </aside>
+
+        <!-- ---------------- LADO DO FORMULÁRIO ---------------- -->
+        <main class="login_area">
+            <form class="login_caixa">
+
+                <div class="login_topo">
+                    <h2>Entrar no sistema</h2>
+                    <p>Informe suas credenciais para continuar.</p>
+                </div>
+
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="voce@email.com" autocomplete="username" required>
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <div class="campo_senha">
+                        <input type="password" id="senha" placeholder="Sua senha" autocomplete="current-password" required>
+                        <button type="button" id="btn_ver_senha" class="ver_senha" title="Mostrar a senha">ver</button>
+                    </div>
+                </div>
+
+                <button type="submit" id="btn_entrar" class="botao_bloco">Entrar</button>
+
+                <div id="resposta"></div>
+
+                <p class="login_criar">
+                    Ainda não tem conta? <a href="./html/cadastro.html">Criar conta agora</a>
+                </p>
+
+                <div class="login_atalhos">
+                    <span class="login_atalhos_titulo">Acessos de teste da homologação</span>
+
+                    <button type="button" class="atalho" data-email="admin@diybello.com" data-senha="admin123456">
+                        <span class="atalho_selo admin">ADMIN</span>
+                        <span class="atalho_texto">
+                            <strong>admin@diybello.com</strong>
+                            <span>Painel com o CRUD completo, estoque e relatórios</span>
+                        </span>
+                    </button>
+
+                    <button type="button" class="atalho" data-email="cliente@diybello.com" data-senha="cliente123">
+                        <span class="atalho_selo user">CLIENTE</span>
+                        <span class="atalho_texto">
+                            <strong>cliente@diybello.com</strong>
+                            <span>Loja, carrinho, pedidos e rastreio da entrega</span>
+                        </span>
+                    </button>
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+
+</html>

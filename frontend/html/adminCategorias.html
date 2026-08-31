@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/config.js" defer></script>
+    <script src="../js/carrinho.js" defer></script>
+    <script src="../js/componentes.js" defer></script>
+    <script src="../js/adminCategorias.js" defer></script>
+
+    <title>Categorias - DIYBELLO</title>
+</head>
+
+<body>
+    <header id="cabecalho"></header>
+
+    <main>
+        <div class="cabecalho_pagina">
+            <h1>Categorias de Hobby</h1>
+            <p>Modalidades atendidas pela loja: velas, cerâmica, pintura, macramê e jardinagem.</p>
+            <p><a href="./admin.html">Voltar ao painel</a></p>
+        </div>
+
+        <div id="resposta"></div>
+
+        <form class="formulario" style="max-width: 100%;">
+            <h2>Cadastrar nova categoria</h2>
+
+            <div class="linha_form">
+                <div class="campo">
+                    <label for="nome">Nome da categoria *</label>
+                    <input type="text" id="nome" placeholder="Ex: Bordado & Tecelagem">
+                </div>
+
+                <div class="campo">
+                    <label for="imagem_url">Imagem</label>
+                    <input type="text" id="imagem_url" placeholder="/img/placeholder.svg">
+                </div>
+            </div>
+
+            <div class="campo">
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao" placeholder="O que o cliente encontra nessa categoria"></textarea>
+            </div>
+
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <button type="button" id="btn_salvar">Cadastrar categoria</button>
+            </div>
+        </form>
+
+        <section style="margin-top: 28px;">
+            <h2>Categorias cadastradas</h2>
+
+            <form class="barra_filtros" id="form_busca">
+                <div class="campo">
+                    <label for="busca">Consultar por código ou nome</label>
+                    <input type="text" id="busca" placeholder="Ex: 1, Velas">
+                </div>
+                <div class="campo">
+                    <button type="submit">Consultar</button>
+                </div>
+                <div class="campo">
+                    <button type="button" id="btn_listar" class="botao_secundario">Listar tudo</button>
+                </div>
+            </form>
+
+            <div id="lista_categorias"></div>
+        </section>
+    </main>
+
+    <footer id="rodape"></footer>
+</body>
+
+</html>

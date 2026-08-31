@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Combo Starter Descubra seu Hobby">
+  <rect width="512" height="512" fill="#bc6f44"/>
+  <g transform="translate(256 256) scale(0.78) translate(-256 -256)">
+    
+    <path d="M150 118c22 26 30 44 30 60a30 30 0 0 1-60 0c0-16 8-34 30-60z" fill="#FFFFFF"/>
+    <rect x="118" y="196" width="64" height="86" rx="12" fill="#FFFFFF"/>
+    <path d="M268 92c14 26 16 60 4 92-10 26-24 40-32 36-8-4-10-24-2-52 8-30 20-56 30-76z" fill="#FFFFFF"/>
+    <circle cx="246" cy="238" r="24" fill="#FFFFFF"/>
+    <path d="M420 128c14 44-2 84-40 100-24 10-46 8-52-2 26-24 50-48 72-74-30 16-56 38-78 62-8-30 12-64 44-80 20-10 40-12 54-6z" fill="#FFFFFF"/>
+    <path d="M96 274l160 46 160-46 44 58-204 60-204-60z" fill="#FFFFFF"/>
+    <path d="M112 348l144 42v100L112 448z" fill="#FFFFFF"/>
+    <path d="M400 348L256 390v100l144-42z" fill="#FFFFFF"/>
+  </g>
+</svg>

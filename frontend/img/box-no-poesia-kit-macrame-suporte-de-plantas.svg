@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Box Nó &amp; Poesia - Kit Macramê Suporte de Plantas">
+  <rect width="512" height="512" fill="#8e7a52"/>
+  <g transform="translate(256 256) scale(0.78) translate(-256 -256)">
+    
+    <rect x="124" y="92" width="264" height="36" rx="18" fill="#FFFFFF"/>
+    <g stroke="#FFFFFF" stroke-width="30" stroke-linecap="round" fill="none">
+      <path d="M186 136c0 74 44 74 44 148 0 56-26 80-26 148"/>
+      <path d="M326 136c0 74-44 74-44 148 0 56 26 80 26 148"/>
+      <path d="M230 284h52"/>
+      <path d="M204 196c34 22 70 22 104 0"/>
+    </g>
+  </g>
+</svg>
