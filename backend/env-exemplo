@@ -5,8 +5,8 @@
 
 # CONFIGURAÇÃO DO BANCO DE DADOS (MySQL)
 DB_NAME=diybello
-DB_USER=root
-DB_PASS=senai
+DB_USER=bello
+DB_PASS=bello123
 DB_HOST=localhost
 DB_PORT=3306
 
