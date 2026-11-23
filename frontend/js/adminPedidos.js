@@ -83,7 +83,6 @@ function consultarPedidos() {
             }
 
             pedidosCarregados = dados
-            mostrarMensagem('resposta', `${dados.length} pedido(s) encontrado(s).`, 'info')
             desenharPedidos(dados)
         })
         .catch((err) => {

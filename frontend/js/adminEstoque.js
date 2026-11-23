@@ -119,7 +119,6 @@ function consultarMovimentos() {
             }
 
             movimentosCarregados = dados
-            mostrarMensagem('resposta', `${dados.length} movimentação(ões) encontrada(s).`, 'info')
             desenharTabela(dados)
         })
         .catch((err) => {

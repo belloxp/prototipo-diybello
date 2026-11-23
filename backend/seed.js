@@ -107,6 +107,7 @@ const PRODUTOS = [
         tempo_minutos: 165,
         preco: 379.90,
         estoque_atual: 10,
+        imagem_url: '/img/sessaofinal.png',
         descricao: 'União da Box Aura com a Box Terra. A experiência perfeita para um encontro a dois ou uma noite com os amigos: velas aromáticas para o clima e cerâmica fria para criar junto.'
     },
     {
@@ -299,7 +300,7 @@ async function seed() {
                 nivel: produto.nivel,
                 tempo_minutos: produto.tempo_minutos,
                 estoque_atual: produto.estoque_atual,
-                imagem_url: `/img/${slug}.svg`,
+                imagem_url: produto.imagem_url || `/img/${slug}.svg`,
                 status: true,
                 categoria_id: mapaCategorias[produto.categoria]
             })

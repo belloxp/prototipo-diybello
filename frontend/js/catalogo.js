@@ -87,7 +87,6 @@ function carregarProdutos() {
                 return
             }
 
-            mostrarMensagem('resposta', `${dados.length} produto(s) encontrado(s).`, 'info')
             renderizarProdutos('lista_produtos', dados)
         })
         .catch((err) => {

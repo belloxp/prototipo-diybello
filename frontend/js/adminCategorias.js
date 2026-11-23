@@ -73,7 +73,6 @@ function consultarCategorias() {
             }
 
             categoriasCarregadas = dados
-            mostrarMensagem('resposta', `${dados.length} categoria(s) encontrada(s).`, 'info')
             desenharTabela(dados)
         })
         .catch((err) => {

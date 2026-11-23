@@ -64,7 +64,6 @@ function consultarUsuarios() {
             }
 
             usuariosCarregados = dados
-            mostrarMensagem('resposta', `${dados.length} cliente(s) encontrado(s).`, 'info')
             desenharTabela(dados)
         })
         .catch((err) => {

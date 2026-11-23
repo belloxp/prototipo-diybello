@@ -115,7 +115,6 @@ function consultarProdutos() {
             }
 
             produtosCarregados = dados
-            mostrarMensagem('resposta', `${dados.length} produto(s) encontrado(s) para "${termo}".`, 'info')
             desenharTabela(dados)
         })
         .catch((err) => {
