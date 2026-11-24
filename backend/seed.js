@@ -70,6 +70,17 @@ const PRODUTOS = [
         descricao: 'Criatividade, modelagem tátil e decoração minimalista. Resultado: porta-joias, mini travessas ou suportes para incenso. Vem na caixa: 1 kg de argila que seca ao ar sem precisar de forno, jogo com 5 estecas, estojo com 6 cores de tinta acrílica em tons terrosos e pastel, 2 pincéis, 1 verniz brilhante impermeabilizante e lixa fina de acabamento.'
     },
     {
+        nome: 'Kit Básico de Cerâmica',
+        categoria: 'Cerâmica & Escultura',
+        tipo: 'CAIXA',
+        nivel: 'INICIANTE',
+        tempo_minutos: 60,
+        preco: 129.90,
+        estoque_atual: 20,
+        imagem_url: '/img/kitBasicoCeramica.png',
+        descricao: 'O primeiro passo para quem quer experimentar cerâmica sem complicação. Resultado: 1 peça pequena modelada à mão — potinho, porta-anel ou pingente. Vem na caixa: 400g de argila que seca ao ar, 3 estecas essenciais, 4 cores de tinta acrílica, 1 pincel e 1 verniz fosco de acabamento.'
+    },
+    {
         nome: 'Box Cores & Brisa - Kit Pintura Aquarela',
         categoria: 'Pintura',
         tipo: 'CAIXA',
