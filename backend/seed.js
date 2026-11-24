@@ -21,27 +21,27 @@ const CATEGORIAS = [
     {
         nome: 'Aroma & Velas',
         descricao: 'Kits de velas aromáticas botânicas, ceras vegetais, essências e pavios de algodão.',
-        imagem_url: '/img/cat-velas.svg'
+        imagem_url: '/img/aromaVelas.png'
     },
     {
         nome: 'Cerâmica & Escultura',
         descricao: 'Argila que seca ao ar, estecas, tintas e vernizes para modelagem sem forno.',
-        imagem_url: '/img/cat-ceramica.svg'
+        imagem_url: '/img/ceramicasEsculturas.png'
     },
     {
         nome: 'Pintura',
         descricao: 'Aquarela, telas, cavaletes e papéis de alta gramatura para desconectar das telas.',
-        imagem_url: '/img/cat-pintura.svg'
+        imagem_url: '/img/pinturaCapa.png'
     },
     {
         nome: 'Macramê',
         descricao: 'Cordões de algodão ecológico, argolas de madeira e guias de nós no estilo boho chic.',
-        imagem_url: '/img/cat-macrame.svg'
+        imagem_url: '/img/macrame.png'
     },
     {
         nome: 'Jardinagem & Terrários',
         descricao: 'Mini ecossistemas em vidro, substratos, mudas e ferramentas de montagem.',
-        imagem_url: '/img/cat-jardinagem.svg'
+        imagem_url: '/img/jardinagem.png'
     }
 ]
 
@@ -65,6 +65,7 @@ const PRODUTOS = [
         tempo_minutos: 120,
         preco: 219.90,
         estoque_atual: 15,
+        imagem_url: '/img/ceramicaFria.png',
         descricao: 'Criatividade, modelagem tátil e decoração minimalista. Resultado: porta-joias, mini travessas ou suportes para incenso. Vem na caixa: 1 kg de argila que seca ao ar sem precisar de forno, jogo com 5 estecas, estojo com 6 cores de tinta acrílica em tons terrosos e pastel, 2 pincéis, 1 verniz brilhante impermeabilizante e lixa fina de acabamento.'
     },
     {
@@ -75,6 +76,7 @@ const PRODUTOS = [
         tempo_minutos: 60,
         preco: 199.90,
         estoque_atual: 18,
+        imagem_url: '/img/pinturaAquarela.png',
         descricao: 'Desconexão das telas, arte expressiva e hobby relaxante. Resultado: 2 quadros pintados à mão prontos para expor. Vem na caixa: 1 mini cavalete de mesa em madeira, 2 telas pequenas de 15x20 cm, estojo de tinta aquarela com 12 cores, kit com 3 pincéis de cerdas macias, godê para misturar tintas e bloco com 5 folhas de papel aquarela de 300g.'
     },
     {
@@ -85,6 +87,7 @@ const PRODUTOS = [
         tempo_minutos: 90,
         preco: 149.90,
         estoque_atual: 22,
+        imagem_url: '/img/kitMacrame.png',
         descricao: 'Decoração estilo boho chic e plantas em casa. Resultado: 1 suporte suspenso feito de nós para vasos de plantas. Vem na caixa: rolo com 30 metros de cordão de algodão ecológico de 4mm, 1 argola principal de madeira natural, 1 gancho em S para pendurar enquanto trança, fita métrica e guia impresso e ilustrado com os 3 nós básicos.'
     },
     {
@@ -118,6 +121,7 @@ const PRODUTOS = [
         tempo_minutos: 180,
         preco: 399.90,
         estoque_atual: 8,
+        imagem_url: '/img/pintura.png',
         descricao: 'Junta a Box Cores & Brisa com a Box Terra e ainda inclui um avental de algodão cru exclusivo com a marca DIYBELLO. Para quem quer levar o hobby a sério.'
     },
     {
