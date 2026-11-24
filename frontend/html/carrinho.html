@@ -20,7 +20,6 @@
     <main>
         <div class="cabecalho_pagina">
             <h1>Seu carrinho</h1>
-            <p>Os itens ficam salvos no LocalStorage do navegador, mesmo sem login.</p>
         </div>
 
         <div id="resposta"></div>
@@ -54,8 +53,11 @@
                 </div>
 
                 <div class="campo">
-                    <label for="observacao">Mensagem do cartão de presente</label>
-                    <textarea id="observacao" placeholder="Opcional - escreva a mensagem que vai no cartão da caixa"></textarea>
+                    <label class="toggle_check">
+                        <input type="checkbox" id="toggle_mensagem">
+                        <span>Incluir mensagem no cartão de presente</span>
+                    </label>
+                    <textarea id="observacao" placeholder="Escreva a mensagem que vai no cartão da caixa" style="display:none; margin-top:8px;"></textarea>
                 </div>
 
                 <button id="btn_finalizar" class="botao_bloco">Finalizar pedido</button>

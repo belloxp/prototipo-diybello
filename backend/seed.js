@@ -137,16 +137,6 @@ const PRODUTOS = [
         imagem_url: '/img/comboUrbanJungle.png',
         descricao: 'Combina a Box EcoVida e a Box Nó & Poesia para quem quer renovar a decoração da casa com plantas e nós artesanais.'
     },
-    {
-        nome: 'Combo Starter Descubra seu Hobby',
-        categoria: 'Cerâmica & Escultura',
-        tipo: 'COMBO',
-        nivel: 'INICIANTE',
-        tempo_minutos: 150,
-        preco: 289.90,
-        estoque_atual: 14,
-        descricao: 'Caixa presenteável gigante com minikits de 3 modalidades diferentes (vela, cerâmica e pintura) para quem quer testar um pouco de tudo antes de escolher o hobby favorito.'
-    },
 
     // ---------------- INSUMOS AVULSOS ----------------
     {

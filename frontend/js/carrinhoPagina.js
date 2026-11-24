@@ -15,11 +15,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     desenharCarrinho()
 
-    // Se o cliente veio do construtor de caixas, já traz a mensagem preenchida
-    const mensagemPresente = localStorage.getItem(CHAVE_MENSAGEM)
+    // Toggle do cartão de presente
+    const toggleMensagem = document.getElementById('toggle_mensagem')
+    const campoObservacao = document.getElementById('observacao')
 
+    toggleMensagem.addEventListener('change', () => {
+        campoObservacao.style.display = toggleMensagem.checked ? 'block' : 'none'
+        if (!toggleMensagem.checked) campoObservacao.value = ''
+    })
+
+    // Se o cliente veio do "Monte sua Caixa" com mensagem preenchida, já abre o campo
+    const mensagemPresente = localStorage.getItem(CHAVE_MENSAGEM)
     if (mensagemPresente) {
-        document.getElementById('observacao').value = mensagemPresente
+        toggleMensagem.checked = true
+        campoObservacao.style.display = 'block'
+        campoObservacao.value = mensagemPresente
     }
 
     document.getElementById('cupom').addEventListener('input', desenharResumo)
@@ -237,17 +247,31 @@ function finalizarPedido() {
 
             limparCarrinho()
             localStorage.removeItem(CHAVE_MENSAGEM)
-
-            mostrarMensagem('resposta', `
-                ${dados.message}!<br>
-                Pedido número <strong>${dados.pedido.id}</strong> -
-                total de <strong>${formatarPreco(dados.resumo.total)}</strong>.<br>
-                Código de rastreio: <strong>${dados.pedido.entregaPedido.codigo_rastreio}</strong>.<br>
-                <a href="./meusPedidos.html">Acompanhar em Meus Pedidos</a>
-            `, 'sucesso')
-
             desenharCarrinho()
-            window.scrollTo({ top: 0, behavior: 'smooth' })
+
+            abrirModal({
+                titulo: 'Pedido confirmado!',
+                subtitulo: `Pedido #${dados.pedido.id} · ${formatarPreco(dados.resumo.total)}`,
+                corpo: `
+                    <div style="text-align:center;padding:8px 0 20px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+                    </div>
+                    <div class="modal_detalhe">
+                        <div class="resumo_linha"><span>Pagamento</span><span>${dados.pedido.forma_pagamento}</span></div>
+                        <div class="resumo_linha"><span>Descontos</span><span>- ${formatarPreco(dados.resumo.desconto)}</span></div>
+                        <div class="resumo_linha"><span>Frete</span><span>${dados.resumo.frete === 0 ? 'Grátis' : formatarPreco(dados.resumo.frete)}</span></div>
+                        <div class="resumo_linha total"><span>Total pago</span><span>${formatarPreco(dados.resumo.total)}</span></div>
+                    </div>
+                    <div style="margin-top:16px;padding:12px 14px;background:var(--creme-2);border-radius:var(--raio);border:var(--borda);">
+                        <p class="ajuda" style="margin:0 0 2px;">Código de rastreio</p>
+                        <strong style="font-size:1rem;letter-spacing:.04em;">${dados.pedido.entregaPedido.codigo_rastreio}</strong>
+                    </div>
+                `,
+                botoes: `
+                    <a href="./loja.html" class="botao botao_secundario">Continuar comprando</a>
+                    <a href="./meusPedidos.html" class="botao">Ver meus pedidos</a>
+                `
+            })
         })
         .catch((err) => {
             botao.disabled = false

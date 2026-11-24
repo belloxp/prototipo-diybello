@@ -870,6 +870,9 @@ button:disabled::after { content: none; }
 
 label { font-size: .79rem; font-weight: 700; color: var(--cacau); letter-spacing: .015em; }
 
+.toggle_check { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.toggle_check input[type="checkbox"] { width: 16px; height: 16px; flex-shrink: 0; accent-color: var(--violeta); cursor: pointer; }
+
 input, select, textarea {
     font-family: inherit; font-size: .96rem;
     padding: 12px 15px;
