@@ -72,7 +72,7 @@ const PRODUTOS = [
     {
         nome: 'Kit Básico de Cerâmica',
         categoria: 'Cerâmica & Escultura',
-        tipo: 'CAIXA',
+        tipo: 'COMBO',
         nivel: 'INICIANTE',
         tempo_minutos: 60,
         preco: 129.90,
