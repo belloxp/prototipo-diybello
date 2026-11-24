@@ -99,6 +99,7 @@ const PRODUTOS = [
         tempo_minutos: 40,
         preco: 169.90,
         estoque_atual: 16,
+        imagem_url: '/img/boxEcoVida.png',
         descricao: 'Contato com a natureza e criação de um ecossistema próprio. Resultado: um mini jardim autossustentável dentro do vidro. Vem na caixa: 1 pote de vidro artesanal grande com tampa de cortiça, cascalho e pedra vulcânica para drenagem, carvão ativado e substrato vegetal especial, 2 mudas de mini plantas (fitônias e musgo vivo), pinça longa de montagem e mini borrifador de água.'
     },
 
@@ -133,6 +134,7 @@ const PRODUTOS = [
         tempo_minutos: 130,
         preco: 299.90,
         estoque_atual: 12,
+        imagem_url: '/img/comboUrbanJungle.png',
         descricao: 'Combina a Box EcoVida e a Box Nó & Poesia para quem quer renovar a decoração da casa com plantas e nós artesanais.'
     },
     {
