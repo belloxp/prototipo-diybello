@@ -55,6 +55,7 @@ const PRODUTOS = [
         tempo_minutos: 45,
         preco: 189.90,
         estoque_atual: 20,
+        imagem_url: '/img/kitVela.png',
         descricao: 'Relaxamento, autocuidado e momentos de spa em casa. Resultado: 2 velas aromáticas personalizadas em potes de vidro. Vem na caixa: 300g de cera vegetal de soja, 2 potes de vidro âmbar com tampa de madeira, 2 pavios de algodão com ilhós, 1 frasco de essência concentrada de Lavanda e Baunilha, kit de flores secas de alfazema e jasmim, termômetro culinário e espátula de madeira.'
     },
     {
