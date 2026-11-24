@@ -1048,7 +1048,7 @@ td.acoes  { display: flex; gap: 6px; flex-wrap: wrap; }
 .item_carrinho strong { font-family: var(--fonte-titulo); font-size: 1rem; font-weight: 700; }
 
 .item_carrinho_qtd { display: flex; align-items: center; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
-.item_carrinho_qtd button { width: 34px; height: 34px; padding: 0; font-size: 1.15rem; line-height: 1; border-radius: 50%; }
+.item_carrinho_qtd button { width: 34px; height: 34px; padding: 0; font-size: 1.15rem; line-height: 1; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
 .item_carrinho_qtd > span { min-width: 32px; text-align: center; font-size: 1.02rem; }
 
 .resumo_linha {

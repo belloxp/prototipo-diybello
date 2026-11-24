@@ -59,6 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 })
 
+const SVG_LIXEIRA = `<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>`
+
 // ---------------- LISTA DOS ITENS ----------------
 function desenharCarrinho() {
 
@@ -76,9 +78,23 @@ function desenharCarrinho() {
         return
     }
 
+    // Busca imagens frescas da API para evitar URLs desatualizadas no LocalStorage
+    fetch(`${API_URL}/produtos`)
+        .then(res => res.json())
+        .then(produtos => {
+            const itensAtualizados = itens.map(item => {
+                const atual = Array.isArray(produtos) && produtos.find(p => p.id === item.produto_id)
+                return atual ? { ...item, imagem_url: atual.imagem_url } : item
+            })
+            renderizarItens(lista, itensAtualizados)
+        })
+        .catch(() => renderizarItens(lista, itens))
+}
+
+function renderizarItens(lista, itens) {
     lista.innerHTML = itens.map(item => `
         <div class="item_carrinho">
-            <img src="${resolverImagem(item.imagem_url)}" alt="${item.nome}">
+            <img src="${resolverImagem(item.imagem_url)}" alt="${item.nome}" onerror="this.src='../img/placeholder.svg'">
 
             <div>
                 <strong>${item.nome}</strong>
@@ -87,7 +103,7 @@ function desenharCarrinho() {
                     <button class="botao_secundario btn_menos" data-id="${item.produto_id}">-</button>
                     <span><strong>${item.quantidade}</strong></span>
                     <button class="botao_secundario btn_mais" data-id="${item.produto_id}">+</button>
-                    <button class="botao_perigo botao_pequeno btn_remover" data-id="${item.produto_id}">Remover</button>
+                    <button class="botao_perigo botao_pequeno btn_remover" data-id="${item.produto_id}" title="Remover item">${SVG_LIXEIRA}</button>
                 </div>
             </div>
 
