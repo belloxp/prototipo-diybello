@@ -155,6 +155,7 @@ const PRODUTOS = [
         tempo_minutos: 20,
         preco: 44.90,
         estoque_atual: 60,
+        imagem_url: '/img/refilCeraDeSoja.png',
         descricao: 'Cera 100% vegetal para derreter e reaproveitar seus potes. Rende aproximadamente 3 velas médias.'
     },
     {
@@ -165,6 +166,7 @@ const PRODUTOS = [
         tempo_minutos: 5,
         preco: 29.90,
         estoque_atual: 80,
+        imagem_url: '/img/essenciaConcentrada.png',
         descricao: 'Essência concentrada para velas. Opções disponíveis: Lavanda, Alecrim, Baunilha ou Bambu.'
     },
     {
@@ -175,6 +177,7 @@ const PRODUTOS = [
         tempo_minutos: 5,
         preco: 24.90,
         estoque_atual: 45,
+        imagem_url: '/img/poteVidroAmbar.png',
         descricao: 'Frasco de vidro âmbar de 200ml com tampa de madeira, ideal para velas e organização.'
     },
     {
@@ -185,6 +188,7 @@ const PRODUTOS = [
         tempo_minutos: 30,
         preco: 39.90,
         estoque_atual: 50,
+        imagem_url: '/img/argilaForno1kg.png',
         descricao: 'Argila de secagem ao ar livre, não precisa de forno. Textura macia e fácil de modelar.'
     },
     {
@@ -195,6 +199,7 @@ const PRODUTOS = [
         tempo_minutos: 10,
         preco: 34.90,
         estoque_atual: 35,
+        imagem_url: '/img/kitEstecas5.png',
         descricao: 'Ferramentas profissionais para esculpir, cortar e detalhar suas peças de cerâmica fria.'
     },
     {
@@ -205,6 +210,7 @@ const PRODUTOS = [
         tempo_minutos: 10,
         preco: 27.90,
         estoque_atual: 40,
+        imagem_url: '/img/vernizImperb.png',
         descricao: 'Acabamento brilhante que impermeabiliza e protege as peças finalizadas.'
     },
     {
@@ -215,6 +221,7 @@ const PRODUTOS = [
         tempo_minutos: 5,
         preco: 49.90,
         estoque_atual: 30,
+        imagem_url: '/img/blocoPapelAquarela.png',
         descricao: 'Bloco A4 com 12 folhas de alta gramatura, textura própria para aquarela.'
     },
     {
@@ -225,6 +232,7 @@ const PRODUTOS = [
         tempo_minutos: 5,
         preco: 59.90,
         estoque_atual: 25,
+        imagem_url: '/img/miniCavalete.png',
         descricao: 'Suporte em madeira natural para telas de até 30 cm. Dobrável e leve.'
     },
     {
@@ -235,6 +243,7 @@ const PRODUTOS = [
         tempo_minutos: 5,
         preco: 69.90,
         estoque_atual: 28,
+        imagem_url: '/img/cordaoDeAlgodao.png',
         descricao: 'Rolo de 50 metros de cordão de algodão ecológico de 4mm para trançar macramê.'
     }
 ]
