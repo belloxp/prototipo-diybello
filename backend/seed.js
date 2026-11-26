@@ -59,7 +59,7 @@ const PRODUTOS = [
     {
         nome: 'Box Terra - Kit Escultura em Cerâmica Fria',
         categoria: 'Cerâmica & Escultura', tipo: 'CAIXA', nivel: 'INTERMEDIARIO',
-        tempo_minutos: 120, preco: 219.90, estoque_atual: 25,
+        tempo_minutos: 120, preco: 219.90, estoque_atual: 8,
         imagem_url: '/img/ceramicaFria.png',
         descricao: 'Criatividade, modelagem tátil e decoração minimalista. Resultado: porta-joias, mini travessas ou suportes para incenso. Vem na caixa: 1 kg de argila que seca ao ar sem precisar de forno, jogo com 5 estecas, estojo com 6 cores de tinta acrílica em tons terrosos e pastel, 2 pincéis, 1 verniz brilhante impermeabilizante e lixa fina de acabamento.'
     },
@@ -83,7 +83,7 @@ const PRODUTOS = [
     {
         nome: 'Box Nó & Poesia - Kit Macramê Suporte de Plantas',
         categoria: 'Macramê', tipo: 'CAIXA', nivel: 'INTERMEDIARIO',
-        tempo_minutos: 90, preco: 149.90, estoque_atual: 30,
+        tempo_minutos: 90, preco: 149.90, estoque_atual: 7,
         imagem_url: '/img/kitMacrame.png',
         descricao: 'Decoração estilo boho chic e plantas em casa. Resultado: 1 suporte suspenso feito de nós para vasos de plantas. Vem na caixa: rolo com 30 metros de cordão de algodão ecológico de 4mm, 1 argola principal de madeira natural, 1 gancho em S para pendurar enquanto trança, fita métrica e guia impresso e ilustrado com os 3 nós básicos.'
     },
@@ -99,7 +99,7 @@ const PRODUTOS = [
     {
         nome: 'Combo Night Out em Casa',
         categoria: 'Aroma & Velas', tipo: 'COMBO', nivel: 'INTERMEDIARIO',
-        tempo_minutos: 165, preco: 379.90, estoque_atual: 20,
+        tempo_minutos: 165, preco: 379.90, estoque_atual: 10,
         imagem_url: '/img/sessaofinal.png',
         descricao: 'União da Box Aura com a Box Terra. A experiência perfeita para um encontro a dois ou uma noite com os amigos: velas aromáticas para o clima e cerâmica fria para criar junto.'
     },
@@ -107,7 +107,7 @@ const PRODUTOS = [
     {
         nome: 'Combo Mestre Criativo',
         categoria: 'Pintura', tipo: 'COMBO', nivel: 'INTERMEDIARIO',
-        tempo_minutos: 180, preco: 399.90, estoque_atual: 18,
+        tempo_minutos: 180, preco: 399.90, estoque_atual: 9,
         imagem_url: '/img/pintura.png',
         descricao: 'Junta a Box Cores & Brisa com a Box Terra e ainda inclui um avental de algodão cru exclusivo com a marca DIYBELLO. Para quem quer levar o hobby a sério.'
     },
