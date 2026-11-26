@@ -83,7 +83,8 @@ function montarChamada(combos) {
 
     if (!elemento || combos.length === 0) return
 
-    const destaque = combos[0]
+    // Prioriza o Combo Night Out (sessaofinal); cai no primeiro caso não encontre
+    const destaque = combos.find(c => c.imagem_url && c.imagem_url.includes('sessaofinal')) || combos[0]
 
     elemento.innerHTML = `<img src="${resolverImagem(destaque.imagem_url)}" alt="${destaque.nome}">`
 }
